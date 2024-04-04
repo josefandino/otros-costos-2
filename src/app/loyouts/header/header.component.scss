@@ -1,0 +1,28 @@
+.header {
+  width: 100%;
+  height: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem;
+  background: #fefefe;
+}
+
+.info {
+  height: auto;
+  display: flex;
+  align-items: center;
+
+  p {
+    margin: 0;
+    padding: 0 0 0 .5rem;
+
+  }
+}
+
+img {
+  width: 100%;
+  height: auto;
+  max-width: 60px;
+  object-fit: cover;
+}

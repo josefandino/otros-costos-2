@@ -1,0 +1,74 @@
+
+
+
+<div class="login">
+  <div class="childLogin p-4 Center">
+    <div >
+      <label class="texto">¡Hola!</label>
+
+    </div>
+
+    <form [formGroup]="ingresarForm" class="fadeIn">
+
+      <div class="mt-5"></div>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Usuario</mat-label>
+        <input matInput formControlName="userName" placeholder="Usuario">
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Contraseña</mat-label>
+        <div class="dflex">
+          <input [type]="obtenerTipoInput()" matInput formControlName="password" placeholder="Contraseña">
+          <span class="material-symbolsd" (click)="alternarVisibilidad()">
+            <mat-icon>{{ mostrarPassword ? 'visibility' : 'visibility_off' }}</mat-icon>
+          </span>
+        </div>
+      </mat-form-field>
+
+
+      @if(ingresarForm.valid){
+      <div >
+        <div class="botones">
+          <button mat-button type="submit" class="mat-button-block" (click)="validarForm()">
+            @if (loaderBtn === true){
+              <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Cargando...
+            }
+
+            @else{
+              Ingresar
+
+
+            }
+          </button>
+
+        </div>
+
+       <!-- @if (loaderBtn === true) {
+        <button mat-button class="mat-button-block" type="button" disabled >
+          <span class="spinner-border spinner-border-sm" role="status" aria-hidden="true"></span>Cargando...
+        </button>
+        }@else{
+        <button mat-button class="mat-button-block" (click)="validarForm()">Ingresar ++++++++++++++</button>
+        }
+      -->
+      </div>
+      }@else {
+      <!---  @if(==false){
+          <div class="botongris">
+            <button mat-button type="submit" class="mat-button-block" (click)="noValidoForm()">Ingresar</button>
+          </div>
+
+        }-->
+        <div class="botongris">
+          <button mat-button type="disabled" class="mat-button-block" (click)="noValidoForm()" >Ingresar </button>
+        </div>
+
+      }
+
+
+    </form>
+
+  </div>
+</div>
