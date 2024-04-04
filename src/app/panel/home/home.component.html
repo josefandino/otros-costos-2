@@ -1,28 +1,68 @@
-
 <app-header />
 
 <main class="pages">
-  <form class="form" [formGroup]="homeForm">
-  
-    <mat-form-field appearance="outline">
-      <mat-label>Campo</mat-label>
-      <input matInput formControlName="name" >
-    </mat-form-field>
-  
-    <mat-form-field appearance="outline">
-      <mat-label>Campo</mat-label>
-      <input matInput formControlName="name" >
-    </mat-form-field>
-  
-    <mat-form-field appearance="outline">
-      <mat-label>Campo</mat-label>
-      <input matInput formControlName="name" >
-    </mat-form-field>
-  
-    <mat-form-field appearance="outline">
-      <mat-label>Campo</mat-label>
-      <input matInput formControlName="name" >
-    </mat-form-field>
+  <form [formGroup]="homeForm">
+    <div class="form">
 
+      <mat-form-field appearance="outline">
+        <mat-label>Unidad de negocio</mat-label>
+        <mat-select formControlName="name">
+          <!-- @for (a of listadoDocumentos; track a.tipo) { -->
+          <mat-option [value]="1">Option 1</mat-option>
+          <mat-option [value]="2">Option 2</mat-option>
+          <mat-option [value]="3">Option 3</mat-option>
+
+          <!-- }@empty{
+        <p>No existen datos para mostrar</p>
+        } -->
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label> Cliente </mat-label>
+        <mat-select formControlName="name">
+          <!-- @for (a of listadoDocumentos; track a.tipo) { -->
+          <mat-option [value]="1">Option 1</mat-option>
+          <mat-option [value]="2">Option 2</mat-option>
+          <mat-option [value]="3">Option 3</mat-option>
+
+          <!-- }@empty{
+        <p>No existen datos para mostrar</p>
+        } -->
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label> Proyecto </mat-label>
+        <mat-select formControlName="name">
+          <!-- @for (a of listadoDocumentos; track a.tipo) { -->
+          <mat-option [value]="1">Option 1</mat-option>
+          <mat-option [value]="2">Option 2</mat-option>
+          <mat-option [value]="3">Option 3</mat-option>
+
+          <!-- }@empty{
+        <p>No existen datos para mostrar</p>
+        } -->
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Periodo</mat-label>
+        <input matInput [matDatepicker]="hasta" formControlName="name" matDatepickerInput>
+        <mat-datepicker-toggle matSuffix [for]="hasta"></mat-datepicker-toggle>
+        <mat-datepicker #hasta></mat-datepicker>
+      </mat-form-field>
+
+    </div>
+
+    <div class="buscar">
+      <div class="bixInput">
+        <mat-form-field appearance="outline">
+          <mat-label>Buscar</mat-label>
+          <input matInput formControlName="name">
+        </mat-form-field>
+      </div>
+    </div>
   </form>
+  
 </main>

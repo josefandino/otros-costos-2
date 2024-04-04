@@ -16,3 +16,11 @@
     grid-template-columns: repeat(1, 1fr);
   }
 }
+
+.buscar {
+  width: 100%;
+  padding: 0 1rem;
+  margin: 0 auto;
+  display: flex;
+  justify-content: flex-end;
+}
